@@ -1,0 +1,31 @@
+.header{
+
+    
+    background-color: rgb(245, 245, 245,0.3);
+    text-align: center;
+    color: whitesmoke;
+    text-shadow: 2px 2px 10px black;
+    font-size: 100px;
+    display: inline;
+    animation-name:LOGO;
+    animation-duration: 2s;
+   
+
+}
+.header .ip {
+
+    margin-top: 10px;
+    font-size: 30px;
+    text-shadow: none;
+    color: black;
+    text-shadow: 1px 1px white;
+    font-weight: 900;
+    
+
+}
+
+@keyframes LOGO{
+    0% {color: transparent;}
+    75% {color: yellow;}
+    100% {color: whitesmoke}
+}

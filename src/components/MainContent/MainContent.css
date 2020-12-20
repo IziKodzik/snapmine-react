@@ -1,0 +1,42 @@
+.mainContent{
+  text-align: center;
+  margin-top: 6vh;
+}
+
+.console {
+    font-family: 'Fira Mono';
+    width: 80%;
+    height: 600px;
+    
+    box-sizing: border-box;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  
+  .console header {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #555;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: #DDD;
+  }
+  
+  .console .consolebody {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-top: 5px;
+    height: calc(100% - 40px);
+    background-color: #000;
+    color: #63de00;
+  }
+  
+  .console .consolebody p {
+    line-height: 1.5rem;
+  }
+
+  

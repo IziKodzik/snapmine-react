@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+    padding:0;
+    background-color:black;
+    background-image: url("./images/planet.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;   
+}
+html,
+body{
+    height: 100%;
+}
