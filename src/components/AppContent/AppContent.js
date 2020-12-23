@@ -6,7 +6,7 @@ import LoginC from '../LoginControll/LoginControll'
 import MainContent from '../MainContent/MainContent'
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import getRoutes from '../../data/Routes'
-
+import Navbar from '../Navbar/Navbar'
 
 
 class AppContent extends Component{
@@ -21,9 +21,10 @@ class AppContent extends Component{
                     
             },
             user:"guest",
-            targets:  getRoutes()       
+            routes : {}
         
         }
+        this.setRoutes = this.setRoutes.bind(this)
         this.handleClick = this.handleClick.bind(this)
         // this.handleOtherClick = this.handleOtherClick(this)
         this.handleChange = this.handleChange(this)
@@ -31,6 +32,11 @@ class AppContent extends Component{
 
     handleChange(event){
         console.log("xdd")
+    }
+
+    setRoutes(paths){
+        console.log("Co tam byczku")
+        this.setState({routes : paths})
     }
 
     handleClick(event){
@@ -50,11 +56,10 @@ class AppContent extends Component{
         return (
             <div className="AppConent">
                 
-
-                <nav className="navbar">
-                    <Menu handleClick={this.handleClick}/>
-                    <LoginC handleClick={this.handleClick}/>
-                </nav>
+                <Navbar 
+                    handleClick={this.handleClick}
+                    setRoutes={this.setRoutes}
+                />
                 <main>  
                     <TransitionGroup>
                         <CSSTransition
@@ -67,8 +72,7 @@ class AppContent extends Component{
                             <MainContent 
                                 handleChange={this.handleChange}
                                 target={this.state.focused}
-                                targets={this.state.targets}
-                                
+                                targets={this.state.routes}       
                             />
                         </CSSTransition>
 
