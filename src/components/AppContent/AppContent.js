@@ -15,27 +15,25 @@ class AppContent extends Component{
         this.state = {
             logged:false,
             show: true,
-            focused:"None",
+            view:"None",
             routes:{
                     
             },
             user:"guest"
         
         }
-        this.setRoutes = this.setRoutes.bind(this)
+        this.setView = this.setView.bind(this)
         this.handleClick = this.handleClick.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.sendFetchClick = this.sendFetchClick.bind(this)
     }
+    
 
     handleChange(event){
        const {name,value} = (event.target)
         this.setState({[name] : value})
     }
 
-    setRoutes(paths){
-        this.setState({routes : paths})
-    }
 
     handleClick(event){
 
@@ -49,7 +47,10 @@ class AppContent extends Component{
         console.log(fetchData)
     }
 
-    
+
+    setView(currentView){
+        this.setState({view : currentView})
+    }
 
     render(){
 
@@ -57,23 +58,18 @@ class AppContent extends Component{
             <div className="AppConent">
                 
                 <Navbar 
-                    handlers={{handleClick : this.handleClick,handleChange : this.handleChange,sendFetchClick : this.sendFetchClick}}
-                    setRoutes={this.setRoutes}
+                    setView={this.setView}
                 />
                 <main>  
                     <TransitionGroup>
                         <CSSTransition
-                        key={this.state.focused}
-                        classNames="fade"
-                        timeout={300}
-                        appear={true}
-                        unmountOnExit={true}
-                        exit={false}>
-                            <MainContent 
-                                handleChange={this.handleChange}
-                                target={this.state.focused}
-                                targets={this.state.routes}       
-                            />
+                            key={this.state.focused}
+                            classNames="fade"
+                            timeout={300}
+                            appear={true}
+                            unmountOnExit={true}
+                            exit={false}>
+                                <MainContent view={this.state.view}/>
                         </CSSTransition>
 
                     </TransitionGroup>

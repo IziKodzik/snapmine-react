@@ -60,16 +60,7 @@ class RegisterForm extends Component{
                     <button 
                         type="button"
                         name="register" 
-                        onClick={this.props.register("http://localhost:8080/api/v1/client", { 
-      
-                            method: "POST", 
-                            body: JSON.stringify(
-                                this.state
-                            ), 
-                            headers: { 
-                                "Content-type": "application/json; charset=UTF-8"
-                            } 
-                        })}
+                        onClick={this.post}
                         onChange={this.props.handleChange}
                         >
                      

@@ -14,14 +14,14 @@ class Login extends React.Component {
             <button
                 name="focused"
                 value="login"
-                onClick={this.props.handleClick}
+                onClick={this.props.setView}
             >
                 ZALOGUJ SIĘ
             </button>
             <button
                 name="focused"
                 value="register"
-                onClick={this.props.handleClick}
+                onClick={this.props.setView}
             >
                 ZAREJESTRUJ
             </button>
