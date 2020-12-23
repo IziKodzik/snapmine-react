@@ -1,5 +1,4 @@
 import './AppContent.css'
-
 import React ,{Component} from 'react'
 import Menu from '../Menu/Menu'
 import LoginC from '../LoginControll/LoginControll'
