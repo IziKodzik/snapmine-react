@@ -20,7 +20,7 @@ class AppContent extends Component{
             routes:{
                     
             },
-            user:"guest",
+            user:"guest"
         
         }
         this.setRoutes = this.setRoutes.bind(this)
@@ -46,8 +46,8 @@ class AppContent extends Component{
             return {[name] : !prev.name}
         })
     }
-    sendFetchClick(name,type,value){
-        console.log("esssa")
+    sendFetchClick(fetchData){
+        console.log(fetchData)
     }
 
     

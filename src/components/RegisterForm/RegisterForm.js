@@ -44,22 +44,35 @@ class RegisterForm extends Component{
                         type="text"
                         name="login" 
                         placeholder="Login" 
-                        onChange={this.handleChange}
+                        onChange={this.props.handleChange}
                     />
                     <input type="password" 
                         name="password" 
                         placeholder="Hasło" 
-                        onChange={this.handleChange}
+                        onChange={this.props.handleChange}
                     />
                     <input 
                         type="password" 
                         name="passwordRepeted" 
                         placeholder="Powtórz hasło" 
-                    />
+                        onChange={this.props.handleChange}
+                        />
                     <button 
                         type="button"
                         name="register" 
-                        onClick={this.props.register}>
+                        onClick={this.props.register("http://localhost:8080/api/v1/client", { 
+      
+                            method: "POST", 
+                            body: JSON.stringify(
+                                this.state
+                            ), 
+                            headers: { 
+                                "Content-type": "application/json; charset=UTF-8"
+                            } 
+                        })}
+                        onChange={this.props.handleChange}
+                        >
+                     
                         UTWÓRZ KONTO
                     </button>
                 </form>
