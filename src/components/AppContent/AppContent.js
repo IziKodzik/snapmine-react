@@ -17,25 +17,24 @@ class AppContent extends Component{
             logged:false,
             show: true,
             focused:"None",
-            views:{
+            routes:{
                     
             },
             user:"guest",
-            routes : {}
         
         }
         this.setRoutes = this.setRoutes.bind(this)
         this.handleClick = this.handleClick.bind(this)
-        // this.handleOtherClick = this.handleOtherClick(this)
-        this.handleChange = this.handleChange(this)
+        this.handleChange = this.handleChange.bind(this)
+        this.sendFetchClick = this.sendFetchClick.bind(this)
     }
 
     handleChange(event){
-        console.log("xdd")
+       const {name,value} = (event.target)
+        this.setState({[name] : value})
     }
 
     setRoutes(paths){
-        console.log("Co tam byczku")
         this.setState({routes : paths})
     }
 
@@ -48,8 +47,10 @@ class AppContent extends Component{
         })
     }
     sendFetchClick(name,type,value){
+        console.log("esssa")
     }
 
+    
 
     render(){
 
@@ -57,7 +58,7 @@ class AppContent extends Component{
             <div className="AppConent">
                 
                 <Navbar 
-                    handleClick={this.handleClick}
+                    handlers={{handleClick : this.handleClick,handleChange : this.handleChange,sendFetchClick : this.sendFetchClick}}
                     setRoutes={this.setRoutes}
                 />
                 <main>  
