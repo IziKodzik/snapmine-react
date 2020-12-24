@@ -1,12 +1,9 @@
 import './AppContent.css'
 import React ,{Component} from 'react'
-import Menu from '../Menu/Menu'
-import LoginC from '../LoginControll/LoginControll'
 import MainContent from '../MainContent/MainContent'
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
-import getRoutes from '../../data/Routes'
 import Navbar from '../Navbar/Navbar'
-
+import Home from '../Home/Home'
 
 class AppContent extends Component{
 
@@ -15,7 +12,7 @@ class AppContent extends Component{
         this.state = {
             logged:false,
             show: true,
-            view:"None",
+            view:{name:"login",component:<Home/>},
             routes:{
                     
             },
@@ -63,13 +60,13 @@ class AppContent extends Component{
                 <main>  
                     <TransitionGroup>
                         <CSSTransition
-                            key={this.state.focused}
+                            key={this.state.view.name}
                             classNames="fade"
                             timeout={300}
                             appear={true}
                             unmountOnExit={true}
                             exit={false}>
-                                <MainContent view={this.state.view}/>
+                                <MainContent view={this.state.view.component} />
                         </CSSTransition>
 
                     </TransitionGroup>

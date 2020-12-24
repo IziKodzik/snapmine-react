@@ -10,11 +10,11 @@ class RegisterForm extends Component{
             password : "",
             passwordRepeted :""
         }
-        this.post = this.post.bind(this)
+        this.register = this.register.bind(this)
 
     }
 
-    post(){
+    register(){
         fetch("http://localhost:8080/api/v1/client", { 
       
             method: "POST", 

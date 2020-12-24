@@ -12,7 +12,7 @@ class Navbar extends React.Component{
     }
 
     setView(event){
-        this.props.setView(this.state.routes[event.target.value])
+        this.props.setView({name:event.target.value,component:this.state.routes[event.target.value]})
     }
     
     render(){
