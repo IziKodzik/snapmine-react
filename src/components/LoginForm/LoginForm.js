@@ -1,18 +1,32 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './LoginForm.css'
 
 
-function LoginForm(params) { 
+function LoginForm(props) { 
 
+    const [name, setName] = useState("")
+    const [pass, setPass] = useState("")
+
+    console.log(props)
     return (
         <div className="loginForm">
             <form>
                 <header>LOGOWANIE</header>
-                <input type="text" name="login" placeholder="Login"/>
-                <input type="password" name="password" placeholder="Hasło"/>
+                <input type="text" name="name" placeholder="Pseudonim" onChange={e => setName(e.target.value)}/>
+                <input type="password" name="password" placeholder="Hasło"  onChange={e => setPass(e.target.value)}/>
                 <div className="loginButtons">
-                    <button type="button" name="login" onClick={trys}>ZALOGUJ</button>
-                    <button type="button" name="remind">PRZYPOMNIJ HASŁO</button>
+                    <button type="button" 
+                        name="login"
+                        onClick={props.log}
+                        
+                    >
+                        ZALOGUJ
+                    </button>
+                    <button 
+                        type="button" 
+                        name="remind">
+                        PRZYPOMNIJ HASŁO
+                    </button>
                 </div>
             </form>
         </div>
@@ -21,8 +35,4 @@ function LoginForm(params) {
 }
 
 export default LoginForm
-function trys(params) {
-    fetch('http://localhost:8080/api/v1/client').then(response=>response.json()).then(result =>{
-        console.log(result)
-    }).catch(e=>{console.error('Error',e)})
-}
+

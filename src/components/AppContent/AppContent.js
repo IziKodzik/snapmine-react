@@ -12,10 +12,11 @@ class AppContent extends Component{
         this.state = {
             logged:false,
             show: true,
-            view:{name:"login",component:<Home/>},
+            view:{name:"homePage",component:<Home/>},
             routes:{
-                    
+                tf:"tftf"
             },
+            logged:false,
             user:"guest"
         
         }
@@ -50,12 +51,14 @@ class AppContent extends Component{
     }
 
     render(){
-
-        return (
+        console.log(this.state.logged)
+        return (   
             <div className="AppConent">
-                
+                    
                 <Navbar 
+                    methods={{tf:"tf"}}
                     setView={this.setView}
+                    setLogged={this.setState}
                 />
                 <main>  
                     <TransitionGroup>

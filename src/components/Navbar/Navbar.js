@@ -7,12 +7,17 @@ class Navbar extends React.Component{
 
     constructor(props){
         super(props)
-        this.state = {routes : getRoutes()}
+        this.state = {routes : getRoutes({tf:"rf"})}
         this.setView = this.setView.bind(this)
+        this.setPState = this.setPState.bind(this) 
     }
 
     setView(event){
         this.props.setView({name:event.target.value,component:this.state.routes[event.target.value]})
+    }
+    setPState(state){
+        console.log("papiez");
+        this.props.setState(state)
     }
     
     render(){

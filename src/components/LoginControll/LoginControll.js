@@ -5,8 +5,14 @@ class Login extends React.Component {
 
     constructor(props){
         super(props)
+        this.state = {}
+        this.handleChange = this.handleChange.bind(this)
     }
 
+    handleChange(event){
+        const {name,value} = event.target
+        this.setState({[name] : value})
+    }
 
     render(){
         return (
@@ -14,6 +20,7 @@ class Login extends React.Component {
             <button
                 name="focused"
                 value="login"
+                onChange={this.handleChange}
                 onClick={this.props.setView}
             >
                 ZALOGUJ SIĘ
@@ -21,6 +28,7 @@ class Login extends React.Component {
             <button
                 name="focused"
                 value="register"
+                onChange={this.handleChange}
                 onClick={this.props.setView}
             >
                 ZAREJESTRUJ

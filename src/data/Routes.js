@@ -6,14 +6,14 @@ import Recrutation from '../components/Recrucation/Recrutation'
 import LabelView from '../components/LabelView/LabelView'
 import DefaultView from '../components/DefaultView/DefaultView'
 
-const getRoutes = (handleChange)=>{
+const getRoutes = (methods)=>{
 return {
-    "login" : <LoginForm onChange={handleChange}/>,
-    "homePage" : <Home onChange={handleChange}/>,
-    "about" : <DefaultView onChange={handleChange}/>,
-    "register" : <RegisterForm onChange={handleChange}/>,
-    "recrutation" : <Recrutation onChange={handleChange}/>,
-    "premium" : <LabelView onChange={handleChange}/>
+    "login" : <LoginForm methods={methods}/>,
+    "homePage" : <Home methods={methods}/>,
+    "about" : <DefaultView methods={methods}/>,
+    "register" : <RegisterForm methods={methods}/>,
+    "recrutation" : <Recrutation methods={methods}/>,
+    "premium" : <LabelView methods={methods}/>
     }
 }
 export default getRoutes
