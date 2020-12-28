@@ -5,21 +5,21 @@ function Menu(props) {
         <nav className="menu">
         <button
             name="focused"
-            value="homePage"
+            view="homePage"
             onClick={props.setView}
         >
             STRONA GŁÓWNA
         </button>           
         <button
             name="focused"
-            value="recrutation"
+            view="recrutation"
             onClick={props.setView}
         >
             DOŁĄCZ DO ZESPOŁU
         </button>
         <button
             name="focused"
-            value="about"
+            view="about"
             onClick={props.setView}
         >
             O NAS
@@ -27,7 +27,7 @@ function Menu(props) {
         <button
             className="btn-premium"
             name="focused"
-            value="premium"
+            view="premium"
             onClick={props.setView}
         >
             SKLEP

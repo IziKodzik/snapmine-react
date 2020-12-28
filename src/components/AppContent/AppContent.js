@@ -22,7 +22,7 @@ class AppContent extends Component{
         this.handleClick = this.handleClick.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.sendFetchClick = this.sendFetchClick.bind(this)
-        this.setLogged = this.setLogged.bind(this)
+        this.appClickHandle = this.appClickHandle.bind(this)
     }
     
 
@@ -44,7 +44,7 @@ class AppContent extends Component{
         console.log(fetchData)
     }
 
-    setLogged(event){
+    appClickHandle(event){
         this.setState({ [event.target.name] : event.target.value})
     }
 
@@ -57,7 +57,7 @@ class AppContent extends Component{
             <div className="AppConent">
                     
                 <Navbar 
-                    methods={{tf:"tf",seter : this.setLogged}}
+                    methods={{appClickHandle : this.appClickHandle}}
                     setView={this.setView}
                     logged={this.state.logged}
                 />

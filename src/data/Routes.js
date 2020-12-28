@@ -8,7 +8,10 @@ import DefaultView from '../components/DefaultView/DefaultView'
 import Account from '../components/Account/Account'
 const getRoutes = (methods)=>{
 return {
-    "login" : <LoginForm methods={methods} log={methods.log}/>,
+    "login" : <LoginForm 
+        methods={methods} 
+        appClick={methods.appClick}
+        setView={methods.setView}/>,
     "homePage" : <Home methods={methods}/>,
     "about" : <DefaultView methods={methods}/>,
     "register" : <RegisterForm methods={methods}/>,

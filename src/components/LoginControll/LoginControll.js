@@ -27,7 +27,7 @@ class Login extends React.Component {
             <div>
             <button
                 name="focused"
-                value="login"
+                view="login"
                 onChange={this.handleChange}
                 onClick={this.props.setView}
             >
@@ -35,7 +35,7 @@ class Login extends React.Component {
             </button>
             <button
                 name="focused"
-                value="register"
+                view="register"
                 onChange={this.handleChange}
                 onClick={this.props.setView}
             >
@@ -46,6 +46,7 @@ class Login extends React.Component {
             <button
                 type="button"
                 name="logged"
+                view="login"
                 surname="login"
                 value={0}
                 onChange={this.handleChange}
@@ -56,7 +57,7 @@ class Login extends React.Component {
             </button>
             <button
                 name="focused"
-                value="account"
+                view="account"
                 onChange={this.handleChange}
                 onClick={this.props.setView}
             >
