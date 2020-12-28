@@ -7,7 +7,7 @@ class Navbar extends React.Component{
 
     constructor(props){
         super(props)
-        this.state = {routes : getRoutes({tf:"rf"})}
+        this.state = {routes : getRoutes({tf:"rf",log : props.methods.seter})}
         this.setView = this.setView.bind(this)
         this.setPState = this.setPState.bind(this) 
     }
@@ -16,7 +16,6 @@ class Navbar extends React.Component{
         this.props.setView({name:event.target.value,component:this.state.routes[event.target.value]})
     }
     setPState(state){
-        console.log("papiez");
         this.props.setState(state)
     }
     
@@ -25,9 +24,12 @@ class Navbar extends React.Component{
             <nav className="navbar">
                 <Menu 
                     setView={this.setView}
+                    logged={this.props.logged}
                 />
                 <LoginC 
+                    logged={this.props.logged}
                     setView={this.setView}
+                    appClick={this.props.methods.seter}
                 />
             </nav>
         )

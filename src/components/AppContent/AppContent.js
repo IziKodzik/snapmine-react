@@ -16,7 +16,6 @@ class AppContent extends Component{
             routes:{
                 tf:"tftf"
             },
-            logged:false,
             user:"guest"
         
         }
@@ -24,6 +23,7 @@ class AppContent extends Component{
         this.handleClick = this.handleClick.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.sendFetchClick = this.sendFetchClick.bind(this)
+        this.setLogged = this.setLogged.bind(this)
     }
     
 
@@ -35,7 +35,7 @@ class AppContent extends Component{
 
     handleClick(event){
 
-        const {name,type,checked,value} = event.target
+        const {name,type,value} = event.target
         type !== "checkbox"? this.setState({[name] : value})
         : this.setState((prev)=>{
             return {[name] : !prev.name}
@@ -45,20 +45,22 @@ class AppContent extends Component{
         console.log(fetchData)
     }
 
+    setLogged(event){
+        this.setState({ [event.target.name] : event.target.value})
+    }
 
     setView(currentView){
         this.setState({view : currentView})
     }
 
     render(){
-        console.log(this.state.logged)
         return (   
             <div className="AppConent">
                     
                 <Navbar 
-                    methods={{tf:"tf"}}
+                    methods={{tf:"tf",seter : this.setLogged}}
                     setView={this.setView}
-                    setLogged={this.setState}
+                    logged={this.state.logged}
                 />
                 <main>  
                     <TransitionGroup>

@@ -6,9 +6,10 @@ function LoginForm(props) {
 
     const [name, setName] = useState("")
     const [pass, setPass] = useState("")
-
-    console.log(props)
+    console.log(name)
+    console.log(pass)
     return (
+        
         <div className="loginForm">
             <form>
                 <header>LOGOWANIE</header>
@@ -16,9 +17,9 @@ function LoginForm(props) {
                 <input type="password" name="password" placeholder="Hasło"  onChange={e => setPass(e.target.value)}/>
                 <div className="loginButtons">
                     <button type="button" 
-                        name="login"
+                        name="logged"
+                        value={true}
                         onClick={props.log}
-                        
                     >
                         ZALOGUJ
                     </button>
