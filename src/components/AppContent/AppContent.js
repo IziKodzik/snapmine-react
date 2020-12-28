@@ -10,7 +10,7 @@ class AppContent extends Component{
     constructor(props){
         super(props)
         this.state = {
-            logged:false,
+            logged: "0",
             show: true,
             view:{name:"homePage",component:<Home/>},
             routes:{

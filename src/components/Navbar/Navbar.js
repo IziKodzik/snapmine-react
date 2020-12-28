@@ -19,31 +19,12 @@ class Navbar extends React.Component{
     setPState(state){
         this.props.setState(state)
     }
-    
-    static getDerivedStateFromProps(np,pS){
-        return {
-            logged : np.logged
-        }
-    }
-
-    gen(bo){
-        if(bo === "true"){
-            console.log(bo)
-            console.log("XD")
-        }else
-            console.log("tf")
-    }
-
-    
     render(){
 
         return(
         
             <nav className="navbar">
-                
-                <div >
-                {this.gen(this.state.logged)}
-                </div>
+            
                 <Menu 
                     setView={this.setView}
                     logged={this.props.logged}

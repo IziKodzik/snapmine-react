@@ -16,9 +16,10 @@ class Login extends React.Component {
     }
 
     render(){
+        console.log(this.props.logged)
         return (
             <nav className="accountManager">
-            {!this.props.logged ? 
+            {!this.props.logged.localeCompare("0") ? 
             <div>
             <button
                 name="focused"
@@ -41,7 +42,7 @@ class Login extends React.Component {
             <button
                 type="button"
                 name="logged"
-                value={false}
+                value={0}
                 onChange={this.handleChange}
                 onClick={this.props.appClick}
             >

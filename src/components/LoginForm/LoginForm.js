@@ -16,7 +16,7 @@ function LoginForm(props) {
                     <button 
                     type="button" 
                         name="logged"
-                        value={true}
+                        value={1}
                         onClick={props.log}
                     >
                         ZALOGUJ
