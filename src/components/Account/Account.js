@@ -3,7 +3,28 @@ import React from 'react'
 const account = (props)=>{
 
     return (
-        <div> account</div>
+        <div> 
+        <div>
+            <button
+                type="button"
+                name="logged"
+                value={false}
+                onClick={this.props.appClick}
+            >
+                WYLOGUJ
+            </button>
+            <button
+                name="focused"
+                value="account"
+                onChange={this.handleChange}
+                onClick={this.props.setView}
+            >
+                PROFIL
+            </button>  
+            </div>
+
+        </div>
+        
     )
 
 }

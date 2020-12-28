@@ -7,7 +7,8 @@ class Navbar extends React.Component{
 
     constructor(props){
         super(props)
-        this.state = {routes : getRoutes({tf:"rf",log : props.methods.seter})}
+        this.state = {routes : getRoutes({tf:"rf",log : props.methods.seter})
+                        ,logged : false}
         this.setView = this.setView.bind(this)
         this.setPState = this.setPState.bind(this) 
     }
@@ -19,9 +20,30 @@ class Navbar extends React.Component{
         this.props.setState(state)
     }
     
+    static getDerivedStateFromProps(np,pS){
+        return {
+            logged : np.logged
+        }
+    }
+
+    gen(bo){
+        if(bo){
+            console.log(bo)
+            console.log("XD")
+        }else
+            console.log("tf")
+    }
+
+    
     render(){
+
         return(
+        
             <nav className="navbar">
+                
+                <div >
+                {this.gen(this.state.logged)}
+                </div>
                 <Menu 
                     setView={this.setView}
                     logged={this.props.logged}

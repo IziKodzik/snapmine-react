@@ -1,22 +1,20 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './LoginForm.css'
 
 
 function LoginForm(props) { 
 
-    const [name, setName] = useState("")
-    const [pass, setPass] = useState("")
-    console.log(name)
-    console.log(pass)
+   
     return (
         
         <div className="loginForm">
             <form>
                 <header>LOGOWANIE</header>
-                <input type="text" name="name" placeholder="Pseudonim" onChange={e => setName(e.target.value)}/>
-                <input type="password" name="password" placeholder="Hasło"  onChange={e => setPass(e.target.value)}/>
+                <input type="text" name="name" placeholder="Pseudonim" />
+                <input type="password" name="password" placeholder="Hasło"  />
                 <div className="loginButtons">
-                    <button type="button" 
+                    <button 
+                    type="button" 
                         name="logged"
                         value={true}
                         onClick={props.log}
