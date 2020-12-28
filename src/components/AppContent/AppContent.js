@@ -3,7 +3,6 @@ import React ,{Component} from 'react'
 import MainContent from '../MainContent/MainContent'
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import Navbar from '../Navbar/Navbar'
-import Home from '../Home/Home'
 
 class AppContent extends Component{
 
@@ -12,7 +11,7 @@ class AppContent extends Component{
         this.state = {
             logged: "0",
             show: true,
-            view:{name:"homePage",component:<Home/>},
+            view:{},
             routes:{
                 tf:"tftf"
             },

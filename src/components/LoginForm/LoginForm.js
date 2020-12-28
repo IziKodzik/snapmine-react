@@ -18,6 +18,7 @@ function LoginForm(props) {
                         name="logged"
                         value={1}
                         onClick={props.log}
+                        view="account"
                     >
                         ZALOGUJ
                     </button>
