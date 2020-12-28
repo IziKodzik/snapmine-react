@@ -27,7 +27,7 @@ class Navbar extends React.Component{
     }
 
     gen(bo){
-        if(bo){
+        if(bo === "true"){
             console.log(bo)
             console.log("XD")
         }else
